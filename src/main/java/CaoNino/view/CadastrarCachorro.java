@@ -31,6 +31,7 @@ public class CadastrarCachorro extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanelAdotarCachorro = new javax.swing.JPanel();
+        jButtonVoltar = new javax.swing.JButton();
         jLabelNome = new javax.swing.JLabel();
         jLabelRaca = new javax.swing.JLabel();
         jLabelCor = new javax.swing.JLabel();
@@ -48,6 +49,13 @@ public class CadastrarCachorro extends javax.swing.JFrame {
         jPanelAdotarCachorro.setBackground(new java.awt.Color(51, 51, 51));
         jPanelAdotarCachorro.setForeground(new java.awt.Color(153, 153, 153));
         jPanelAdotarCachorro.setCursor(new java.awt.Cursor(java.awt.Cursor.CROSSHAIR_CURSOR));
+
+        jButtonVoltar.setText("Voltar");
+        jButtonVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVoltarActionPerformed(evt);
+            }
+        });
 
         jLabelNome.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jLabelNome.setForeground(new java.awt.Color(255, 255, 255));
@@ -87,34 +95,37 @@ public class CadastrarCachorro extends javax.swing.JFrame {
             .addGroup(jPanelAdotarCachorroLayout.createSequentialGroup()
                 .addGroup(jPanelAdotarCachorroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelAdotarCachorroLayout.createSequentialGroup()
-                        .addGroup(jPanelAdotarCachorroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanelAdotarCachorroLayout.createSequentialGroup()
-                                .addGap(192, 192, 192)
-                                .addGroup(jPanelAdotarCachorroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabelRaca)
-                                    .addGroup(jPanelAdotarCachorroLayout.createSequentialGroup()
-                                        .addComponent(jLabelCor)
-                                        .addGap(12, 12, 12)))
-                                .addGap(24, 24, 24))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelAdotarCachorroLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addGroup(jPanelAdotarCachorroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabelNome, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabelPeso, javax.swing.GroupLayout.Alignment.TRAILING))
-                                .addGap(18, 18, 18)))
-                        .addGroup(jPanelAdotarCachorroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextFieldEndereco, javax.swing.GroupLayout.DEFAULT_SIZE, 275, Short.MAX_VALUE)
-                            .addComponent(jTextFieldCor)
-                            .addComponent(jTextFieldNome)
-                            .addComponent(jTextFieldPeso, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanelAdotarCachorroLayout.createSequentialGroup()
                         .addGap(248, 248, 248)
                         .addComponent(jLabel1))
-                    .addGroup(jPanelAdotarCachorroLayout.createSequentialGroup()
-                        .addGap(289, 289, 289)
-                        .addComponent(jButtonCadastrar)
-                        .addGap(31, 31, 31)
-                        .addComponent(jButtonLimpar)))
+                    .addGroup(jPanelAdotarCachorroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelAdotarCachorroLayout.createSequentialGroup()
+                            .addGap(289, 289, 289)
+                            .addComponent(jButtonCadastrar)
+                            .addGap(31, 31, 31)
+                            .addComponent(jButtonLimpar)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                            .addComponent(jButtonVoltar))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelAdotarCachorroLayout.createSequentialGroup()
+                            .addGroup(jPanelAdotarCachorroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanelAdotarCachorroLayout.createSequentialGroup()
+                                    .addGap(192, 192, 192)
+                                    .addGroup(jPanelAdotarCachorroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jLabelRaca)
+                                        .addGroup(jPanelAdotarCachorroLayout.createSequentialGroup()
+                                            .addComponent(jLabelCor)
+                                            .addGap(12, 12, 12)))
+                                    .addGap(24, 24, 24))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelAdotarCachorroLayout.createSequentialGroup()
+                                    .addContainerGap()
+                                    .addGroup(jPanelAdotarCachorroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabelNome, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabelPeso, javax.swing.GroupLayout.Alignment.TRAILING))
+                                    .addGap(18, 18, 18)))
+                            .addGroup(jPanelAdotarCachorroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jTextFieldEndereco, javax.swing.GroupLayout.DEFAULT_SIZE, 275, Short.MAX_VALUE)
+                                .addComponent(jTextFieldCor)
+                                .addComponent(jTextFieldNome)
+                                .addComponent(jTextFieldPeso, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(253, Short.MAX_VALUE))
         );
         jPanelAdotarCachorroLayout.setVerticalGroup(
@@ -141,7 +152,8 @@ public class CadastrarCachorro extends javax.swing.JFrame {
                 .addGap(32, 32, 32)
                 .addGroup(jPanelAdotarCachorroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonCadastrar)
-                    .addComponent(jButtonLimpar))
+                    .addComponent(jButtonLimpar)
+                    .addComponent(jButtonVoltar))
                 .addGap(240, 240, 240))
         );
 
@@ -178,6 +190,11 @@ public class CadastrarCachorro extends javax.swing.JFrame {
                 
             }
     }//GEN-LAST:event_jButtonCadastrarActionPerformed
+
+    private void jButtonVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVoltarActionPerformed
+        this.dispose();
+        new TelaPrincipal().setVisible(true);
+    }//GEN-LAST:event_jButtonVoltarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -217,6 +234,7 @@ public class CadastrarCachorro extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonCadastrar;
     private javax.swing.JButton jButtonLimpar;
+    private javax.swing.JButton jButtonVoltar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabelCor;
     private javax.swing.JLabel jLabelNome;

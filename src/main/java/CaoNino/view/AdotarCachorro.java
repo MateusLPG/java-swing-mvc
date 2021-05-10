@@ -6,10 +6,19 @@
 package CaoNino.view;
 
 import CaoNino.controller.FichaAdocaoController;
+import CaoNino.dao.AdotarDAO;
+import CaoNino.dao.ConnectionMVC;
 import CaoNino.dao.ExceptionDAO;
+import CaoNino.model.Canino;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import javax.swing.JComboBox;
 
 /**
  *
@@ -20,8 +29,11 @@ public class AdotarCachorro extends javax.swing.JFrame {
     /**
      * Creates new form AdotarCachorro
      */
+    
+    
     public AdotarCachorro() {
         initComponents();
+        FillCombo();
     }
 
     /**
@@ -34,6 +46,7 @@ public class AdotarCachorro extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jButtonVoltar = new javax.swing.JButton();
         jLabelTitulo = new javax.swing.JLabel();
         jLabelNomeAnimal = new javax.swing.JLabel();
         jLabelNomeAdotante = new javax.swing.JLabel();
@@ -47,6 +60,13 @@ public class AdotarCachorro extends javax.swing.JFrame {
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
+
+        jButtonVoltar.setText("Voltar");
+        jButtonVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVoltarActionPerformed(evt);
+            }
+        });
 
         jLabelTitulo.setFont(new java.awt.Font("Gadugi", 0, 36)); // NOI18N
         jLabelTitulo.setForeground(new java.awt.Color(255, 255, 255));
@@ -67,7 +87,7 @@ public class AdotarCachorro extends javax.swing.JFrame {
             }
         });
 
-        jComboBoxNomeAnimal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Teste 1", "Teste2" }));
+        jComboBoxNomeAnimal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione o Cachorro" }));
         jComboBoxNomeAnimal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxNomeAnimalActionPerformed(evt);
@@ -84,7 +104,9 @@ public class AdotarCachorro extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(447, 447, 447)
-                        .addComponent(jButtonAdotar))
+                        .addComponent(jButtonAdotar)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButtonVoltar))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(274, 274, 274)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -100,7 +122,7 @@ public class AdotarCachorro extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(351, 351, 351)
                         .addComponent(jLabelTitulo)))
-                .addContainerGap(310, Short.MAX_VALUE))
+                .addContainerGap(199, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -116,21 +138,27 @@ public class AdotarCachorro extends javax.swing.JFrame {
                     .addComponent(jLabelNomeAdotante)
                     .addComponent(jComboBoxNomePessoa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jButtonAdotar)
-                .addContainerGap(293, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonAdotar)
+                    .addComponent(jButtonVoltar))
+                .addContainerGap(92, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(99, 99, 99))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(201, 201, 201))
         );
 
         pack();
@@ -159,12 +187,39 @@ public class AdotarCachorro extends javax.swing.JFrame {
         }
     }
     private void jComboBoxNomeAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxNomeAnimalActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jComboBoxNomeAnimalActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    private void jButtonVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVoltarActionPerformed
+        this.dispose();
+        new TelaPrincipal().setVisible(true);
+    }//GEN-LAST:event_jButtonVoltarActionPerformed
+    
+    
+    
+    public void FillCombo() {
+        
+        String sql = "select * from Canino";
+            Connection connection  = null;
+            PreparedStatement ps = null;
+            ResultSet rs = null;
+        
+        try {
+            connection = new ConnectionMVC().getConnection();
+            
+            ps = connection.prepareStatement(sql);
+            rs = ps.executeQuery();
+            
+            while (rs.next()) {
+                String name = rs.getString("nomeCanino");
+                jComboBoxNomeAnimal.addItem(name);
+            }
+        } catch (Exception e) {
+                System.out.println(e.getMessage());
+        }
+    }
+        
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -199,11 +254,15 @@ public class AdotarCachorro extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAdotar;
-    private javax.swing.JComboBox<String> jComboBoxNomeAnimal;
+    private javax.swing.JButton jButtonVoltar;
+    public javax.swing.JComboBox<String> jComboBoxNomeAnimal;
     private javax.swing.JComboBox<String> jComboBoxNomePessoa;
     private javax.swing.JLabel jLabelNomeAdotante;
     private javax.swing.JLabel jLabelNomeAnimal;
     private javax.swing.JLabel jLabelTitulo;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
+
+
+
 }

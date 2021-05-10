@@ -16,10 +16,14 @@ import java.sql.SQLException;
 import CaoNino.model.Canino;
 import CaoNino.model.FichaAdocao;
 import CaoNino.model.Pessoa;
+import java.sql.ResultSet;
+import javax.swing.JOptionPane;
+import CaoNino.view.AdotarCachorro;
+import java.util.ArrayList;
 
 public class AdotarDAO extends ConnectionMVC{
     public void AdotarCachorro (FichaAdocao ficha) throws ExceptionDAO {
-        String sql = "insert into teste (cachorro, pessoa) value (?, ?)";
+        String sql = "insert into fichaAdocao (cachorro, pessoa) value (?, ?)";
         PreparedStatement pStatement = null;
         Connection connection = null;
         
@@ -48,4 +52,9 @@ public class AdotarDAO extends ConnectionMVC{
             }
         }
     }
+    
+       
+
+       
 }
+ 

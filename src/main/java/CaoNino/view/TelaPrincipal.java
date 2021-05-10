@@ -193,7 +193,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonVerCaesActionPerformed
 
     private void jButtonAdotarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAdotarActionPerformed
-        // TODO add your handling code here:
+        this.dispose();
+        new AdotarCachorro().setVisible(true);
     }//GEN-LAST:event_jButtonAdotarActionPerformed
 
     private void jMenuItemPessoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemPessoaActionPerformed
@@ -209,10 +210,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItemFichasActionPerformed
 
     private void jButtonCadastrarPessoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadastrarPessoaActionPerformed
-        // TODO add your handling code here:
+        this.dispose();
+        new CadastrarPessoa().setVisible(true);
     }//GEN-LAST:event_jButtonCadastrarPessoaActionPerformed
 
     private void jButtonCadastrarCaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadastrarCaoActionPerformed
+        this.dispose();
         new CadastrarCachorro().setVisible(true);    
   
     }//GEN-LAST:event_jButtonCadastrarCaoActionPerformed
