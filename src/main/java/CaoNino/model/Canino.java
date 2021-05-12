@@ -23,6 +23,7 @@ public class Canino {
     private double peso;
     private Pessoa pessoa;
 
+    
     public Canino(String nome, String raca, String cor, double peso) {
         this.nome = nome;
         this.raca = raca;

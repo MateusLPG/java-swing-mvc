@@ -22,6 +22,7 @@ import CaoNino.view.AdotarCachorro;
 import java.util.ArrayList;
 
 public class AdotarDAO extends ConnectionMVC{
+    
     public void AdotarCachorro (FichaAdocao ficha) throws ExceptionDAO {
         String sql = "insert into fichaAdocao (cachorro, pessoa) value (?, ?)";
         PreparedStatement pStatement = null;
@@ -40,20 +41,51 @@ public class AdotarDAO extends ConnectionMVC{
         
         } finally {           
             try {    
-                if (pStatement != null){ pStatement.close(); }
+                if (pStatement != null){ 
+                    
+                    pStatement.close();
+                }
             } catch (SQLException e){
                 throw new ExceptionDAO("Erro no Statement: " + e); 
                 
                 
             } try {
-                if (connection != null ) { connection.close();}
+                if (connection != null ) {
+                
+                    connection.close();
+                }
             } catch (SQLException e){
                 throw new ExceptionDAO ("Erro ao fechar a conexão" + e);
             }
         }
     }
     
-       
+    
+    public ArrayList<Canino> listarCachorros () {
+           
+        String sql = "select * from Canino";
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        Connection conn = null;
+        ArrayList<Canino> listaCachorros = new ArrayList<>();
+        
+        try {
+            conn = new ConnectionMVC().getConnection();
+            ps = conn.prepareStatement(sql);
+            rs = ps.executeQuery();
+            
+            while (rs.next()) {
+                Canino canino = new Canino (rs.getString("nomeCanino"), rs.getString("raca"), rs.getString("cor"), rs.getFloat("peso"));
+                listaCachorros.add(canino);               
+            }
+        
+        } catch (Exception e) { 
+            System.out.println("Erro: " + e); 
+        }      
+        
+        return listaCachorros;
+    }
+    
 
        
 }

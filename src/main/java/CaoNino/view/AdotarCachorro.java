@@ -30,10 +30,9 @@ public class AdotarCachorro extends javax.swing.JFrame {
      * Creates new form AdotarCachorro
      */
     
-    
     public AdotarCachorro() {
         initComponents();
-        FillCombo();
+        lotarCombo();        
     }
 
     /**
@@ -185,6 +184,7 @@ public class AdotarCachorro extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Erro!" + e);
         
         }
+
     }
     private void jComboBoxNomeAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxNomeAnimalActionPerformed
 
@@ -196,29 +196,22 @@ public class AdotarCachorro extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonVoltarActionPerformed
     
     
-    
-    public void FillCombo() {
+    public void lotarCombo() {
+        AdotarDAO adotardao = new AdotarDAO();
         
-        String sql = "select * from Canino";
-            Connection connection  = null;
-            PreparedStatement ps = null;
-            ResultSet rs = null;
+        ArrayList<Canino> lista = new ArrayList<>();
+        lista = adotardao.listarCachorros();
         
-        try {
-            connection = new ConnectionMVC().getConnection();
+        jComboBoxNomeAnimal.removeAllItems();
+        jComboBoxNomeAnimal.addItem(null);
+        
+        for (Canino canino : lista){
             
-            ps = connection.prepareStatement(sql);
-            rs = ps.executeQuery();
-            
-            while (rs.next()) {
-                String name = rs.getString("nomeCanino");
-                jComboBoxNomeAnimal.addItem(name);
-            }
-        } catch (Exception e) {
-                System.out.println(e.getMessage());
+            jComboBoxNomeAnimal.addItem(canino.getNome());
+        
         }
+                
     }
-        
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -251,6 +244,7 @@ public class AdotarCachorro extends javax.swing.JFrame {
             }
         });
     }
+     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAdotar;
