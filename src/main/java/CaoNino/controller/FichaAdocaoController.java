@@ -13,15 +13,14 @@ import CaoNino.model.FichaAdocao;
  * @author mateus
  */
 public class FichaAdocaoController {
-    public boolean cadastrarFicha(String cachorro, String pessoa) throws ExceptionDAO {
-        if (cachorro != null && cachorro.length() > 0 && pessoa != null && pessoa.length() > 0) {
-            FichaAdocao fichaadocao = new FichaAdocao(cachorro, pessoa);
+    
+    public boolean cadastrarFicha(int CodigoCachorro, int CodigoPessoa) throws ExceptionDAO {
+            FichaAdocao fichaadocao = new FichaAdocao(CodigoCachorro, CodigoPessoa);
             
             fichaadocao.AdotarCachorro(fichaadocao);
             
             return true;
-        }
-        return false;
+        
     }
     
 }

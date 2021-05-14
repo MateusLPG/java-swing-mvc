@@ -61,7 +61,7 @@
                               <Component id="jButtonCadastrar" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                               <Component id="jButtonLimpar" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="40" max="32767" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                               <Component id="jButtonVoltar" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
@@ -87,15 +87,15 @@
                                   </Group>
                               </Group>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jTextFieldEndereco" alignment="0" pref="275" max="32767" attributes="0"/>
                                   <Component id="jTextFieldCor" alignment="0" max="32767" attributes="0"/>
                                   <Component id="jTextFieldNome" alignment="0" max="32767" attributes="0"/>
                                   <Component id="jTextFieldPeso" alignment="0" min="-2" pref="127" max="-2" attributes="0"/>
+                                  <Component id="jComboBoxSelecioneRaca" alignment="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace pref="253" max="32767" attributes="0"/>
+                  <EmptySpace pref="216" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -111,8 +111,8 @@
                   </Group>
                   <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jTextFieldEndereco" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabelRaca" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jComboBoxSelecioneRaca" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -183,8 +183,6 @@
             <Property name="text" type="java.lang.String" value="Cor:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextFieldEndereco">
-        </Component>
         <Component class="javax.swing.JTextField" name="jTextFieldCor">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelPeso">
@@ -225,6 +223,98 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextFieldPeso">
+        </Component>
+        <Component class="javax.swing.JComboBox" name="jComboBoxSelecioneRaca">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="81">
+                <StringItem index="0" value="Selecione a Ra&#xe7;a"/>
+                <StringItem index="1" value="Alano Espanhol"/>
+                <StringItem index="2" value="Airedale Terrier"/>
+                <StringItem index="3" value="American Staffordshire Terrier"/>
+                <StringItem index="4" value="American Water Spaniel"/>
+                <StringItem index="5" value="Antigo C&#xe3;o de Pastor Ingl&#xea;s"/>
+                <StringItem index="6" value="Basset Azul da Gasconha"/>
+                <StringItem index="7" value="Basset Fulvo da Bretanha"/>
+                <StringItem index="8" value="Basset Hound"/>
+                <StringItem index="9" value="Beagle"/>
+                <StringItem index="10" value="Bearded Collie"/>
+                <StringItem index="11" value="Bichon Malt&#xea;s"/>
+                <StringItem index="12" value="Bobtail"/>
+                <StringItem index="13" value="Border Collie"/>
+                <StringItem index="14" value="Boston Terrier"/>
+                <StringItem index="15" value="Boxer"/>
+                <StringItem index="16" value="Bull Terrier"/>
+                <StringItem index="17" value="Bullmastiff"/>
+                <StringItem index="18" value="Bulldog"/>
+                <StringItem index="19" value="C&#xe3;o de Montanha dos Pirin&#xe9;us"/>
+                <StringItem index="20" value="Caniche"/>
+                <StringItem index="21" value="Chihuahua"/>
+                <StringItem index="22" value="Cirneco do Etna"/>
+                <StringItem index="23" value="Chow Chow"/>
+                <StringItem index="24" value="Cocker Spaniel (Americano ou Ingl&#xea;s)"/>
+                <StringItem index="25" value="D&#xe1;lmata"/>
+                <StringItem index="26" value="Dobermann"/>
+                <StringItem index="27" value="Dogue Alem&#xe3;o"/>
+                <StringItem index="28" value="Dogue Argentino"/>
+                <StringItem index="29" value="Dogue Can&#xe1;rio"/>
+                <StringItem index="30" value="Fox Terrier"/>
+                <StringItem index="31" value="Foxhound"/>
+                <StringItem index="32" value="Galgo"/>
+                <StringItem index="33" value="Golden Retriever"/>
+                <StringItem index="34" value="Gos d&apos;Atura"/>
+                <StringItem index="35" value="Husky Siberiano"/>
+                <StringItem index="36" value="Laika"/>
+                <StringItem index="37" value="Labrador Retriever"/>
+                <StringItem index="38" value="Malamute-do-Alasca"/>
+                <StringItem index="39" value="Mastin dos Piren&#xe9;us"/>
+                <StringItem index="40" value="Mastin do Tibete"/>
+                <StringItem index="41" value="Mastin Espanhol"/>
+                <StringItem index="42" value="Mast&#xed;n Napolitano"/>
+                <StringItem index="43" value="Pastor Alem&#xe3;o"/>
+                <StringItem index="44" value="Pastor Belga"/>
+                <StringItem index="45" value="Pastor de Brie"/>
+                <StringItem index="46" value="Pastor dos Piren&#xe9;us de Cara Rosa"/>
+                <StringItem index="47" value="Pequin&#xea;s"/>
+                <StringItem index="48" value="Perdigueiro"/>
+                <StringItem index="49" value="Pinscher"/>
+                <StringItem index="50" value="Pitbull"/>
+                <StringItem index="51" value="Podengo"/>
+                <StringItem index="52" value="Pointer"/>
+                <StringItem index="53" value="Pug"/>
+                <StringItem index="54" value="Rhodesian Ridgeback"/>
+                <StringItem index="55" value="Rottweiler"/>
+                <StringItem index="56" value="Rough Collie"/>
+                <StringItem index="57" value="Sabueso (Espanhol ou Italiano)"/>
+                <StringItem index="58" value="Saluki"/>
+                <StringItem index="59" value="Samoiedo"/>
+                <StringItem index="60" value="S&#xe3;o Bernardo"/>
+                <StringItem index="61" value="Scottish Terrier"/>
+                <StringItem index="62" value="Setter Irland&#xe9;s"/>
+                <StringItem index="63" value="Shar-Pei"/>
+                <StringItem index="64" value="Shiba Inu"/>
+                <StringItem index="65" value="Smooth Collie"/>
+                <StringItem index="66" value="Staffordshire Bull Terrier"/>
+                <StringItem index="67" value="Teckel"/>
+                <StringItem index="68" value="Terra-nova"/>
+                <StringItem index="69" value="Terrier Australiano"/>
+                <StringItem index="70" value="Terrier Escoc&#xea;s"/>
+                <StringItem index="71" value="Terrier Irland&#xea;s"/>
+                <StringItem index="72" value="Terrier Japon&#xea;s"/>
+                <StringItem index="73" value="Terrier Negro Russo"/>
+                <StringItem index="74" value="Terrier Norfolk"/>
+                <StringItem index="75" value="Terrier Norwich"/>
+                <StringItem index="76" value="Terrier Tibetano"/>
+                <StringItem index="77" value="Welhs Terrier"/>
+                <StringItem index="78" value="West Highland T."/>
+                <StringItem index="79" value="Wolfspitz"/>
+                <StringItem index="80" value="Yorkshire Terrier"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
         </Component>
       </SubComponents>
     </Container>

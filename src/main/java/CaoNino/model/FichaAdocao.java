@@ -7,6 +7,7 @@ package CaoNino.model;
 
 import CaoNino.dao.AdotarDAO;
 import CaoNino.dao.ExceptionDAO;
+import CaoNino.view.AdotarCachorro;
 import java.util.Date;
 
 /**
@@ -15,53 +16,39 @@ import java.util.Date;
  */
 public class FichaAdocao {
     
-    private String cachorro;
-    private String pessoa;
-    private Canino canino;
-    private Pessoa pessoaP;
+
+    private int codigoCanino;
+    private int codigoPessoa;
     private Date dataAdocao;
 
-    public FichaAdocao(String nomeCanino, String nomePessoa) {
-        this.cachorro = nomeCanino;
-        this.pessoa = nomePessoa;
+    AdotarCachorro adotarcachorro = new AdotarCachorro();
+    
+    public FichaAdocao(int idCanino, int idPessoa) {
+        this.codigoCanino = idCanino;
+        this.codigoPessoa = idPessoa;
     }
     
     
     public void AdotarCachorro (FichaAdocao ficha) throws ExceptionDAO {
+        
         new AdotarDAO().AdotarCachorro(ficha);
         
     } 
 
-    public String getCachorro() {
-        return cachorro;
+    public int getCodigoCanino() {
+        return codigoCanino;
     }
 
-    public void setCachorro(String cachorro) {
-        this.cachorro = cachorro;
+    public void setCodigoCanino(int codigoCanino) {
+        this.codigoCanino = codigoCanino;
     }
 
-    public String getPessoa() {
-        return pessoa;
+    public int getCodigoPessoa() {
+        return codigoPessoa;
     }
 
-    public void setPessoa(String pessoa) {
-        this.pessoa = pessoa;
-    }
-
-    public Canino getCanino() {
-        return canino;
-    }
-
-    public void setCanino(Canino canino) {
-        this.canino = canino;
-    }
-
-    public Pessoa getPessoaP() {
-        return pessoaP;
-    }
-
-    public void setPessoaP(Pessoa pessoaP) {
-        this.pessoaP = pessoaP;
+    public void setCodigoPessoa(int codigoPessoa) {
+        this.codigoPessoa = codigoPessoa;
     }
 
     public Date getDataAdocao() {
@@ -72,6 +59,17 @@ public class FichaAdocao {
         this.dataAdocao = dataAdocao;
     }
 
+    public AdotarCachorro getAdotarcachorro() {
+        return adotarcachorro;
+    }
+
+    public void setAdotarcachorro(AdotarCachorro adotarcachorro) {
+        this.adotarcachorro = adotarcachorro;
+    }
+
+
+
+    
   
     
     

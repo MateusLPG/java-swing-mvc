@@ -35,7 +35,6 @@ public class CadastrarCachorro extends javax.swing.JFrame {
         jLabelNome = new javax.swing.JLabel();
         jLabelRaca = new javax.swing.JLabel();
         jLabelCor = new javax.swing.JLabel();
-        jTextFieldEndereco = new javax.swing.JTextField();
         jTextFieldCor = new javax.swing.JTextField();
         jLabelPeso = new javax.swing.JLabel();
         jTextFieldNome = new javax.swing.JTextField();
@@ -43,6 +42,7 @@ public class CadastrarCachorro extends javax.swing.JFrame {
         jButtonLimpar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jTextFieldPeso = new javax.swing.JTextField();
+        jComboBoxSelecioneRaca = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -88,6 +88,8 @@ public class CadastrarCachorro extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Cadastrar Cão");
 
+        jComboBoxSelecioneRaca.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione a Raça", "Alano Espanhol", "Airedale Terrier", "American Staffordshire Terrier", "American Water Spaniel", "Antigo Cão de Pastor Inglês", "Basset Azul da Gasconha", "Basset Fulvo da Bretanha", "Basset Hound", "Beagle", "Bearded Collie", "Bichon Maltês", "Bobtail", "Border Collie", "Boston Terrier", "Boxer", "Bull Terrier", "Bullmastiff", "Bulldog", "Cão de Montanha dos Pirinéus", "Caniche", "Chihuahua", "Cirneco do Etna", "Chow Chow", "Cocker Spaniel (Americano ou Inglês)", "Dálmata", "Dobermann", "Dogue Alemão", "Dogue Argentino", "Dogue Canário", "Fox Terrier", "Foxhound", "Galgo", "Golden Retriever", "Gos d'Atura", "Husky Siberiano", "Laika", "Labrador Retriever", "Malamute-do-Alasca", "Mastin dos Pirenéus", "Mastin do Tibete", "Mastin Espanhol", "Mastín Napolitano", "Pastor Alemão", "Pastor Belga", "Pastor de Brie", "Pastor dos Pirenéus de Cara Rosa", "Pequinês", "Perdigueiro", "Pinscher", "Pitbull", "Podengo", "Pointer", "Pug", "Rhodesian Ridgeback", "Rottweiler", "Rough Collie", "Sabueso (Espanhol ou Italiano)", "Saluki", "Samoiedo", "São Bernardo", "Scottish Terrier", "Setter Irlandés", "Shar-Pei", "Shiba Inu", "Smooth Collie", "Staffordshire Bull Terrier", "Teckel", "Terra-nova", "Terrier Australiano", "Terrier Escocês", "Terrier Irlandês", "Terrier Japonês", "Terrier Negro Russo", "Terrier Norfolk", "Terrier Norwich", "Terrier Tibetano", "Welhs Terrier", "West Highland T.", "Wolfspitz", "Yorkshire Terrier" }));
+
         javax.swing.GroupLayout jPanelAdotarCachorroLayout = new javax.swing.GroupLayout(jPanelAdotarCachorro);
         jPanelAdotarCachorro.setLayout(jPanelAdotarCachorroLayout);
         jPanelAdotarCachorroLayout.setHorizontalGroup(
@@ -103,7 +105,7 @@ public class CadastrarCachorro extends javax.swing.JFrame {
                             .addComponent(jButtonCadastrar)
                             .addGap(31, 31, 31)
                             .addComponent(jButtonLimpar)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButtonVoltar))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelAdotarCachorroLayout.createSequentialGroup()
                             .addGroup(jPanelAdotarCachorroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -122,11 +124,11 @@ public class CadastrarCachorro extends javax.swing.JFrame {
                                         .addComponent(jLabelPeso, javax.swing.GroupLayout.Alignment.TRAILING))
                                     .addGap(18, 18, 18)))
                             .addGroup(jPanelAdotarCachorroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jTextFieldEndereco, javax.swing.GroupLayout.DEFAULT_SIZE, 275, Short.MAX_VALUE)
                                 .addComponent(jTextFieldCor)
                                 .addComponent(jTextFieldNome)
-                                .addComponent(jTextFieldPeso, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(253, Short.MAX_VALUE))
+                                .addComponent(jTextFieldPeso, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jComboBoxSelecioneRaca, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                .addContainerGap(216, Short.MAX_VALUE))
         );
         jPanelAdotarCachorroLayout.setVerticalGroup(
             jPanelAdotarCachorroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -139,8 +141,8 @@ public class CadastrarCachorro extends javax.swing.JFrame {
                     .addComponent(jLabelNome))
                 .addGap(11, 11, 11)
                 .addGroup(jPanelAdotarCachorroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextFieldEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelRaca))
+                    .addComponent(jLabelRaca)
+                    .addComponent(jComboBoxSelecioneRaca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(16, 16, 16)
                 .addGroup(jPanelAdotarCachorroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldCor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -177,7 +179,7 @@ public class CadastrarCachorro extends javax.swing.JFrame {
             
         try{
         CaninoController caninocontroller = new CaninoController();
-        sucesso = caninocontroller.cadastrarCanino(jTextFieldNome.getText(), jTextFieldEndereco.getText(), jTextFieldCor.getText(), peso);
+        sucesso = caninocontroller.cadastrarCanino(jTextFieldNome.getText(), jComboBoxSelecioneRaca.getSelectedItem().toString(), jTextFieldCor.getText(), peso);
         if (sucesso == true) {
             JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!");
             }
@@ -235,6 +237,7 @@ public class CadastrarCachorro extends javax.swing.JFrame {
     private javax.swing.JButton jButtonCadastrar;
     private javax.swing.JButton jButtonLimpar;
     private javax.swing.JButton jButtonVoltar;
+    private javax.swing.JComboBox<String> jComboBoxSelecioneRaca;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabelCor;
     private javax.swing.JLabel jLabelNome;
@@ -242,7 +245,6 @@ public class CadastrarCachorro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelRaca;
     private javax.swing.JPanel jPanelAdotarCachorro;
     private javax.swing.JTextField jTextFieldCor;
-    private javax.swing.JTextField jTextFieldEndereco;
     private javax.swing.JTextField jTextFieldNome;
     private javax.swing.JTextField jTextFieldPeso;
     // End of variables declaration//GEN-END:variables

@@ -24,15 +24,16 @@ import java.util.ArrayList;
 public class AdotarDAO extends ConnectionMVC{
     
     public void AdotarCachorro (FichaAdocao ficha) throws ExceptionDAO {
-        String sql = "insert into fichaAdocao (cachorro, pessoa) value (?, ?)";
+        String sql = "insert into fichaAdocao (codigoCanino, codigoPessoa) value (?, ?)";
         PreparedStatement pStatement = null;
         Connection connection = null;
         
         try {            
             connection = new ConnectionMVC().getConnection();
             pStatement = connection.prepareStatement(sql);
-            pStatement.setString(1, ficha.getCachorro());
-            pStatement.setString(2, ficha.getPessoa());
+        //Talvez seja necessário passar o ParseInt nesses pStatement abaixo
+            pStatement.setInt(1, ficha.getCodigoCanino());
+            pStatement.setInt(2, ficha.getCodigoPessoa());
             pStatement.execute();
         
         } catch (SQLException e) {
@@ -81,9 +82,15 @@ public class AdotarDAO extends ConnectionMVC{
         
         } catch (Exception e) { 
             System.out.println("Erro: " + e); 
-        }      
+        }   
+        
+        for (Canino c : listaCachorros) {
+            System.out.println(c);
+        }
         
         return listaCachorros;
+        
+ 
     }
     
 

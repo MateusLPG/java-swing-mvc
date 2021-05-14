@@ -13,6 +13,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import CaoNino.model.Canino;
+import java.util.ArrayList;
 
 //classe capaz de fazer o crud
 
@@ -30,6 +31,8 @@ public class CaninoDAO extends ConnectionMVC{
             pStatement.setString(3, cao.getCor());
             pStatement.setDouble(4, cao.getPeso());
             pStatement.execute();
+            ArrayList<Canino> caninoLista = new ArrayList<>();
+            caninoLista.add(new Canino(cao.getNome(), cao.getRaca(), cao.getCor(), cao.getPeso()));
         
         } catch (SQLException e) {
             

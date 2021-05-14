@@ -56,7 +56,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jButtonAdotar.setBackground(new java.awt.Color(255, 255, 255));
         jButtonAdotar.setFont(new java.awt.Font("Nirmala UI", 0, 24)); // NOI18N
-        jButtonAdotar.setText("Adotar");
+        jButtonAdotar.setText("Cadastrar Adoção");
         jButtonAdotar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonAdotarActionPerformed(evt);
@@ -148,7 +148,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(549, Short.MAX_VALUE)
+                .addContainerGap(543, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButtonCadastrarCao)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
