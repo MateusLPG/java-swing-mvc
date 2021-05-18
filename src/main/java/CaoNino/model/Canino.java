@@ -21,7 +21,7 @@ public class Canino {
     private String raca;
     private String cor;
     private double peso;
-    private Pessoa pessoa;
+    private Pessoa id;
 
     
     public Canino(String nome, String raca, String cor, double peso) {

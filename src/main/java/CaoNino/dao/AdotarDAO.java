@@ -89,8 +89,31 @@ public class AdotarDAO extends ConnectionMVC{
         }
         
         return listaCachorros;
+    }
+    
+    public ArrayList<Pessoa> listarPessoas (){
         
- 
+        ArrayList<Pessoa> listaPessoas = new ArrayList<>();
+        
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        Connection conn = null;
+        
+        String sql = "select * from Pessoa"
+        
+        try {
+            conn = new ConnectionMVC().getConnection();
+            
+            
+        } catch {
+            
+        }
+        
+        
+        
+        
+        
+        return listaPessoas;
     }
     
 
